@@ -1,3 +1,4 @@
+%global qt_version 5.15.8
 
 Summary: Qt5 - QtGraphicalEffects component
 Name: opt-qt5-qtgraphicaleffects
@@ -13,7 +14,7 @@ Source0: %{name}-%{version}.tar.bz2
 %global __provides_exclude_from ^%{_opt_qt5_archdatadir}/qml/.*\\.so$
 
 BuildRequires: make
-BuildRequires: opt-qt5-qtbase-devel >= %{version}
+BuildRequires: opt-qt5-qtbase-devel >= %{qt_version}
 BuildRequires: opt-qt5-qtbase-private-devel
 #libQt5Quick.so.5(Qt_5_PRIVATE_API)(64bit)
 %{?_opt_qt5:Requires: %{_opt_qt5}%{?_isa} = %{_opt_qt5_version}}
