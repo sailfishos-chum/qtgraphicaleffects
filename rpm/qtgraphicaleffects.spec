@@ -12,13 +12,15 @@ Source0: %{name}-%{version}.tar.bz2
 
 # filter qml provides
 %global __provides_exclude_from ^%{_opt_qt5_archdatadir}/qml/.*\\.so$
+%{?opt_qt5_default_filter}
 
 BuildRequires: make
 BuildRequires: opt-qt5-qtbase-devel >= %{qt_version}
 BuildRequires: opt-qt5-qtbase-private-devel
 #libQt5Quick.so.5(Qt_5_PRIVATE_API)(64bit)
 %{?_opt_qt5:Requires: %{_opt_qt5}%{?_isa} = %{_opt_qt5_version}}
-Requires: opt-qt5-qtdeclarative
+Requires: opt-qt5-qtdeclarative >= %{qt_version}
+Requires: opt-qt5-qtbase-gui >= %{qt_version}
 BuildRequires: opt-qt5-qtdeclarative-devel
 
 BuildRequires: pkgconfig(libmng)
